@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import CertificationCard from "../components/CertificationCard.astro";
+---
+
+<BaseLayout title="About | Juan Velasquez" description="Acerca de mi">
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            Amante del café ☕, desarrollador web junior especializado en
+            tecnologías modernas como React, Python y Node.js. Apasionado por
+            enfrentar desafíos y aportar soluciones innovadoras en proyectos de
+            desarrollo👨‍💻. Con sólidos conocimientos en bases de datos, diseño
+            web y colaboración en equipo, estoy ansioso por contribuir al éxito
+            de nuevos proyectos👥.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Educacion</h2>
+        <div class="content">
+          <p>Ingeniería en Sistemas y Computación (Enero 2020 - presente)</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Certificaciones</h2>
+        <div class="content">
+          <div class="certifications">
+            <CertificationCard
+              title="Bootcamp"
+              content="Programacion - 150 horas"
+              certifier="Talento tech"
+			  link="https://talentotech2.com.co/"
+            />
+            <CertificationCard
+              title="Curso"
+              content="Tools of the Trade: Linux and SQL"
+              certifier="Google - Coursera"
+			  link="https://coursera.org/share/e0c92627e09e727db9c83108cdfbc5ba"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .certifications {
+    display: flex;
+	padding: 1rem; 
+	justify-content: space-around;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
