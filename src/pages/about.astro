@@ -65,9 +65,10 @@ import CertificationCard from "../components/CertificationCard.astro";
 
 <style>
   .certifications {
-    display: flex;
+    display: grid;
     padding: 1rem;
-    justify-content: space-around;
+    gap: 1rem;  
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .about {
     display: flex;
