@@ -31,6 +31,12 @@ import CertificationCard from "../components/CertificationCard.astro";
         <div class="content">
           <div class="certifications">
             <CertificationCard
+              title="Course"
+              content="Curso profesional de React JS"
+              certifier="codigo facilito"
+              link="https://talentotech2.com.co/"
+            />
+            <CertificationCard
               title="Bootcamp"
               content="Programming - 150 hours"
               certifier="Talento tech"
@@ -79,7 +85,7 @@ import CertificationCard from "../components/CertificationCard.astro";
   .certifications {
     display: grid;
     padding: 1rem;
-    gap: 1rem;  
+    gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .about {
